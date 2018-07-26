@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MSG>
+    <META>
+        <SNDR>FIMS</SNDR>
+        <RCVR></RCVR>
+        <SEQN>1</SEQN>
+        <SENDTIME>20140101 00:00:00</SENDTIME>
+        <TYPE>DYNFLIGHT</TYPE>
+        <SUBTYPE>ADD</SUBTYPE>
+    </META>
+    <DFLT>
+        <ID>657423</ID>
+        <CONNECTFLIGHT>
+            <ID>364584</ID>
+            <FLIGHTDATE>20140128</FLIGHTDATE>
+            <ARRFLIGHTID>355809</ARRFLIGHTID>
+            <DEPFLIGHTID></DEPFLIGHTID>
+            <STAGEID>400002</STAGEID>
+            <STAGECODE>PLAN</STAGECODE>
+        </CONNECTFLIGHT>
+        <BIZKEY>20150116-ZH9694-O-W/Z-201501162005
+        </BIZKEY>
+        <AIRLINEID>123</AIRLINEID>
+        <AIRLINE>CA</AIRLINE>
+        <FLIGHTNO>1570</FLIGHTNO>
+        <FLIGHTDATE>20140120</FLIGHTDATE>
+        <ISARRFLIGHT>1</ISARRFLIGHT>
+        <TASKID>123</TASKID>
+        <TASK>W/Z</TASK>
+        <REGIONID>100001</REGIONID>
+        <REGION>DMST</REGION>
+        <CRAFTMODELID>3456</CRAFTMODELID>
+        <CRAFTMODEL>B738</CRAFTMODEL>
+        <CRAFTID>2996</CRAFTID>
+        <CRAFT>B2996</CRAFT>
+        <STATUSID>300003</STATUSID>
+        <STATUS>ONR</STATUS>
+        <ABNSTATUSID>300920</ABNSTATUSID>
+        <ABNSTATUS>DLY</ABNSTATUS>
+        <ABNRSN>前站天气</ABNRSN>
+        <SEATLST>
+            <SEAT>
+                <SEATID>456</SEATID>
+                <SEATNAME>32</SEATNAME>
+            </SEAT>
+        </SEATLST>
+        <ROUTELST>
+            <ROUTE>
+                <ID>889732</ID>
+                <AIRPORTID>457</AIRPORTID>
+                <AIRPORTIATA>CTU</AIRPORTIATA>
+                <REGIONID>100101</REGIONID>
+                <REGION>DMST</REGION>
+                <PLANLANDING></PLANLANDING>
+                <ALTERLANDING></ALTERLANDING>
+                <REALLANDING></REALLANDING>
+                <PLANTAKEOFF>20140101 00:00:00</PLANTAKEOFF>
+                <ALTERTAKEOFF></ALTERTAKEOFF>
+                <REALTAKEOFF></REALTAKEOFF>
+                <ISALTERAIRPORT>0</ISALTERAIRPORT>
+                <ISEXECUTED>
+                    </ISEXECUTED>
+                        <ROUTEORDER>0</ROUTEORDER>
+            </ROUTE>
+             <ROUTE>
+                        <ID>458221</ID>
+                        <AIRPORTID>458</AIRPORTID>
+                        <AIRPORTIATA>SHE</AIRPORTIATA>
+                        <REGIONID>100101</REGIONID>
+                        <REGION>DMST</REGION>
+                        <PLANLANDING>20140101 02:00:00</PLANLANDING>
+                        <ALTERLANDING></ALTERLANDING>
+                        <REALLANDING></REALLANDING>
+                        <PLANTAKEOFF>20140101 03:00:00</PLANTAKEOFF>
+                        <ALTERTAKEOFF></ALTERTAKEOFF>
+                        <REALTAKEOFF></REALTAKEOFF>
+                        <ISALTERAIRPORT>0</ISALTERAIRPORT>
+                        <ISEXECUTED>
+                            </ISEXECUTED>
+                                <ROUTEORDER>2</ROUTEORDER>
+             </ROUTE>
+            <ROUTE>
+                                <ID>458221</ID>
+                                <AIRPORTID>459</AIRPORTID>
+                                <AIRPORTIATA>TAO</AIRPORTIATA>
+                                <REGIONID>100101</REGIONID>
+                                <REGION>DMST</REGION>
+                                <PLANLANDING>20140101 04:00:00</PLANLANDING>
+                                <ALTERLANDING></ALTERLANDING>
+                                <REALLANDING></REALLANDING>
+                                <PLANTAKEOFF></PLANTAKEOFF>
+                                <ALTERTAKEOFF></ALTERTAKEOFF>
+                                <REALTAKEOFF></REALTAKEOFF>
+                                <ISALTERAIRPORT>0</ISALTERAIRPORT>
+                                <ISEXECUTED>
+                                </ISEXECUTED>
+                                        <ROUTEORDER>3</ROUTEORDER>
+            </ROUTE>
+        </ROUTELST>
+                                <SHARELST>
+                                    <SHARE>
+                                        <AIRLINEID>189702</AIRLINEID>
+                                        <AIRLINE>CA</AIRLINE>
+                                        <FLIGHTNO>1123</FLIGHTNO>
+                                    </SHARE>
+                                    <SHARE>
+                                        <AIRLINEID>189703</AIRLINEID>
+                                        <AIRLINE>CZ</AIRLINE>
+                                        <FLIGHTNO>1124</FLIGHTNO>
+                                    </SHARE>
+                                </SHARELST>
+                                <CKITIME>
+                                    <PLANOPENTIME>20150101 13:30:00</PLANOPENTIME>
+                                    <PLANENDTIME>20150101 15:00:00</PLANENDTIME>
+                                    <REALOPENTIME></REALOPENTIME>
+                                    <REALENDTIME></REALENDTIME>
+                                </CKITIME>
+                                <CKICLST>
+                                    <CKIC>
+                                        <CKICID>123</CKICID>
+                                        <CKICNAME>A23</CKICNAME>
+                                        <CKICAREAID>300300</CKICAREAID>
+                                        <CKICAREANAME>A 岛</CKICAREANAME>
+                                        <SERVICECLASSID>30031</SERVICECLASSID>
+                                        <SERVICECLASS>山航头等舱</SERVICECLASS>
+                                        <GENERALCKI>1</GENERALCKI>
+                                        <BYAUTO>1</BYAUTO>
+                                    </CKIC>
+                                    <CKIC>
+                                        <CKICID>124</CKICID>
+                                        <CKICNAME>A29</CKICNAME>
+                                        <CKICAREAID>300300</CKICAREAID>
+                                        <CKICAREANAME>A 岛</CKICAREANAME>
+                                        <SERVICECLASSID>30031</SERVICECLASSID>
+                                        <SERVICECLASS>山航头等舱</SERVICECLASS>
+                                        <GENERALCKI>1</GENERALCKI>
+                                        <BYAUTO>1</BYAUTO>
+                                    </CKIC>
+                                </CKICLST>
+                                <GATETIME>
+                                    <PLANOPENTIME>20150101 13:30:00</PLANOPENTIME>
+                                    <PLANENDTIME>20150101 15:00:00</PLANENDTIME>
+                                    <REALOPENTIME></REALOPENTIME>
+                                    <REALENDTIME></REALENDTIME>
+                                </GATETIME>
+                                <GATELST>
+                                    <GATE>
+                                        <GATEID>302625</GATEID>
+                                        <GATENAME>30</GATENAME>
+                                        <BYAUTO>1</BYAUTO>
+                                    </GATE>
+                                </GATELST>
+                                <ACRSLTIME>
+                                    <PLANOPENTIME>20150101 13:30:00</PLANOPENTIME>
+                                    <PLANENDTIME>20150101 15:00:00</PLANENDTIME>
+                                    <REALOPENTIME></REALOPENTIME>
+                                    <REALENDTIME></REALENDTIME>
+                                </ACRSLTIME>
+                                <ACRSLLST>
+                                    <ACRSL>
+                                        <ACRSLID>302625</ACRSLID>
+                                        <ACRSLNAME>1 号转盘</ACRSLNAME>
+                                        <BYAUTO>1</BYAUTO>
+                                    </ACRSL>
+                                    <ACRSL>
+                                        <ACRSLID>302626</ACRSLID>
+                                        <ACRSLNAME>2 号转盘</ACRSLNAME>
+                                        <BYAUTO>1</BYAUTO>
+                                    </ACRSL>
+                                </ACRSLLST>
+                                <DCRSLTIME>
+                                    <PLANOPENTIME>20150101 13:30:00</PLANOPENTIME>
+                                    <PLANENDTIME>20150101 15:00:00</PLANENDTIME>
+                                    <REALOPENTIME></REALOPENTIME>
+                                    <REALENDTIME></REALENDTIME>
+                                </DCRSLTIME>
+                                <DCRSLLST>
+                                    <DCRSL>
+                                        <DCRSLID>302625</DCRSLID>
+                                        <DCRSLNAME>1 号转盘</DCRSLNAME>
+                                        <BYAUTO>1</BYAUTO>
+                                    </DCRSL>
+                                    <DCRSL>
+                                        <DCRSLID>302626</DCRSLID>
+                                        <DCRSLNAME>2 号转盘</DCRSLNAME>
+                                        <BYAUTO>1</BYAUTO>
+                                    </DCRSL>
+                                </DCRSLLST>
+                                <JETBRIDGETIME>
+                                    <PLANOPENTIME>20150101 13:30:00</PLANOPENTIME>
+                                    <PLANENDTIME>20150101 15:00:00</PLANENDTIME>
+                                    <REALOPENTIME></REALOPENTIME>
+                                    <REALENDTIME></REALENDTIME>
+                                </JETBRIDGETIME>
+                                <JETBRIDGELST>
+                                    <JETBRIDGE>
+                                        <JETBRIDGEID>351592</JETBRIDGEID>
+                                        <JETBRIDGENAME>4 号桥</JETBRIDGENAME>
+                                        <BYAUTO>0</BYAUTO>
+                                    </JETBRIDGE>
+                                    <JETBRIDGE>
+                                        <JETBRIDGEID>351593</JETBRIDGEID>
+                                        <JETBRIDGENAME>5 号桥</JETBRIDGENAME>
+                                        <BYAUTO>0</BYAUTO>
+                                    </JETBRIDGE>
+                                </JETBRIDGELST>
+                                <HASVIP>1</HASVIP>
+                                <BREAKCONN>0</BREAKCONN>
+                                <DEPRESSDELAYALERT>0</DEPRESSDELAYALERT>
+                                <NEEDDELAYCONFIRM>1</NEEDDELAYCONFIRM>
+                                <STAGE>400001</STAGE>
+                                <STAGECODE>DYN</STAGECODE>
+                                <FLIGHTSTATE>2</FLIGHTSTATE>
+                                <FLIGHTSTATECODE>PUBLIC</FLIGHTSTATECODE>
+                                <RELEASETIME>2014020716:26:00</RELEASETIME>
+                                <COMMENTS></COMMENTS>
+                                <ENDDATE></ENDDATE>
+                                <NEEDPUBLIC>0</NEEDPUBLIC>
+                            </DFLT>
+                        </MSG>

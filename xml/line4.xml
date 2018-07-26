@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TaxiCircuit>
+    <MaxSlipTime>0.0</MaxSlipTime>
+    <Plane>f4</Plane>
+    <Route>
+        <TaxiPoint>
+            <Id>31</Id>
+            <Point>
+                <X>0.0</X>
+                <Y>0.0</Y>
+            </Point>
+            <Sequence>1</Sequence>
+            <T>0.0</T>
+            <V>1.0</V>
+        </TaxiPoint>
+        <TaxiPoint>
+            <Id>32</Id>
+            <Point>
+                <X>50.0</X>
+                <Y>50.0</Y>
+            </Point>
+            <Sequence>2</Sequence>
+            <T>0.0</T>
+            <V>1.0</V>
+        </TaxiPoint>
+        <TaxiPoint>
+            <Id>33</Id>
+            <Point>
+                <X>100.0</X>
+                <Y>100.0</Y>
+            </Point>
+            <Sequence>3</Sequence>
+            <T>0.0</T>
+            <V>1.0</V>
+        </TaxiPoint>
+    </Route>
+</TaxiCircuit>

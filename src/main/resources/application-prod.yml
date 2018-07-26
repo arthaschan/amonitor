@@ -1,0 +1,22 @@
+server:
+  port: 9000
+logging:
+  path: C:\log\dlamq
+  level: trace
+#
+#spring:
+#  jpa:
+#    database: mysql
+#  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/test
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: cdm
+#    password: cdm
+#    max-idle: 10
+#    max-wait: 10000
+#    min-idle: 5
+#    initial-size: 5
+#mybatis:
+#  mapper-locations: classpath*:mapper/mybatis-*.xml
+#  type-aliases-package: com.szatc.ibatis.entity
+#  config-location: classpath:mybatis-config.xml

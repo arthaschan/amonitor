@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szatc.ibatis.mapper.DlAirlineMapper">
+	<resultMap id="BaseResultMap" type="com.szatc.ibatis.entity.DlAirline">
+		<result column="fid" property="id" />
+        <result column="fiata" property="iata" />
+		<result column="ficao" property="icao" />
+		<result column="fcn" property="cn" />
+
+	</resultMap>
+
+  <sql id="Base_Column_List" >
+   fid,fiata,ficao,fcn
+  </sql>
+    <select id="getList" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from t_cdm_dl_airline
+    </select>
+
+</mapper>

@@ -1,0 +1,15 @@
+2018-07-26 13:56:36,907 INFO (StartupInfoLogger.java:48)- Starting AmonitorApplicationTests on arthas with PID 11544 (started by Administrator in D:\IntellijWork\amonitor2)
+2018-07-26 13:56:36,908 INFO (SpringApplication.java:597)- The following profiles are active: dev
+2018-07-26 13:56:40,087 INFO (StartupInfoLogger.java:57)- Started AmonitorApplicationTests in 3.634 seconds (JVM running for 4.686)
+2018-07-26 13:57:33,801 INFO (StartupInfoLogger.java:48)- Starting AmonitorApplication on arthas with PID 3780 (D:\IntellijWork\amonitor2\target\classes started by Administrator in D:\IntellijWork\amonitor2)
+2018-07-26 13:57:33,805 INFO (SpringApplication.java:597)- The following profiles are active: dev
+2018-07-26 13:57:37,629 INFO (StartupInfoLogger.java:57)- Started AmonitorApplication in 4.621 seconds (JVM running for 6.219)
+2018-07-26 13:57:54,073 ERROR (AirportController.java:46)- null
+2018-07-26 13:57:54,188 ERROR (Cal.java:121)- 飞机f1和飞机f2在时刻15产生冲突，当时他们分别在Point{x=15.0, y=0.0}和Point{x=15.303300858899107, y=4.696699141100893}
+2018-07-26 13:57:54,189 ERROR (Cal.java:121)- 飞机f1和飞机f3在时刻11产生冲突，当时他们分别在Point{x=11.0, y=0.0}和Point{x=10.0, y=0.0}
+2018-07-26 13:57:54,189 ERROR (Cal.java:121)- 飞机f1和飞机f4在时刻1产生冲突，当时他们分别在Point{x=1.0, y=0.0}和Point{x=0.7071067811865475, y=0.7071067811865475}
+2018-07-26 13:57:54,190 ERROR (Cal.java:121)- 飞机f2和飞机f4在时刻8产生冲突，当时他们分别在Point{x=8.0, y=10.0}和Point{x=5.65685424949238, y=5.65685424949238}
+2018-07-26 13:57:54,192 ERROR (Cal.java:121)- 飞机f4和飞机f5在时刻68产生冲突，当时他们分别在Point{x=48.08326112068523, y=48.08326112068523}和Point{x=48.08326112068523, y=51.91673887931477}
+2018-07-26 14:01:50,757 INFO (StartupInfoLogger.java:48)- Starting AmonitorApplicationTests on arthas with PID 412 (started by Administrator in D:\IntellijWork\amonitor2)
+2018-07-26 14:01:50,758 INFO (SpringApplication.java:597)- The following profiles are active: dev
+2018-07-26 14:01:54,639 INFO (StartupInfoLogger.java:57)- Started AmonitorApplicationTests in 4.686 seconds (JVM running for 6.043)

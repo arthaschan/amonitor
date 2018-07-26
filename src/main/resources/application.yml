@@ -1,0 +1,56 @@
+#server:
+#  port: 9000
+#logging:
+#  path: C:\log\dlamq
+#  level: trace
+#
+#spring:
+#  jpa:
+#    database: oracle
+#  activemq:
+#    broker-url: tcp://172.20.102.5:61616
+#  datasource:
+#    url: jdbc:oracle:thin:@172.16.1.132:1521:cdm
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    username: cdm
+#    password: cdm
+#mybatis:
+#  mapper-locations: classpath*:mapper/mybatis-*.xml
+#  type-aliases-package: com.szatc.ibatis.entity
+#  config-location: classpath:mybatis-config.xml
+##
+##    url: jdbc:oracle:thin:@192.168.101.87:1521:cdm
+##    broker-url=tcp://192.168.52.182:6161
+##    activemq.receive.queue.name=a-acdm.2.cdm
+##    activemq.send.queue.name=cdm.2.a-acdm
+##    #activemq.brokerURL=tcp://172.20.102.5:61616
+##    activemq.brokerURL=tcp://192.168.52.182:61616
+##cdm 192.168.101.87 172.16.1.132
+
+spring:
+  profiles:
+    active: dev
+  logging:
+    config: classpath:logback.xml
+  freemarker:
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    suffix: .ftl
+    template-loader-path: classpath:/templates
+
+sys:
+  minDistance: 5
+#management:
+#  port: 9001
+#  health:
+#    mail:
+#      enabled: false
+#  context-path: /manage
+#  security:
+#     enabled: true
+#enable 为false，则默认启用health .否则启用所有
+
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szatc.ibatis.mapper.DlMsgMapper">
+	<resultMap id="BaseResultMap" type="com.szatc.ibatis.entity.DlMsg">
+		<result column="fid" property="id" />
+		<result column="fversion" jdbcType="DOUBLE" property="version"  javaType="java.lang.Integer"/>
+		<result column="fsender" property="sndr" />
+		<result column="freceiver" property="rcvr" />
+		<result column="fseqn" property="seqn" />
+        <result column="ftype" property="type" />
+        <result column="fsubtype" property="subType" />
+        <result column="fxmlcontent" jdbcType="CLOB" property="xmlContent" javaType="string" />
+        <result column="fstate" property="state" />
+        <result column="fexception" property="exception" />
+        <result column="fsendtime" jdbcType="TIMESTAMP" property="sendTime" javaType="java.sql.Timestamp"/>
+        <result column="fcreatetime" jdbcType="TIMESTAMP" property="createTime" javaType="java.sql.Timestamp" />
+        <result column="fseatstate" property="seatState" />
+	</resultMap>
+
+  <sql id="Base_Column_List" >
+   fid,fversion,fsender,freceiver,fseqn,ftype,fsubtype,fxmlContent,fstate,fexception,fsendTime,fcreateTime,fseatstate
+  </sql>
+    <select id="getList" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from t_cdm_dl_msg
+        where  fstate is NULL or fstate=''   or fstate='0'
+    </select>
+
+
+    <select id="getSeatTodo" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from t_cdm_dl_msg
+        where 1=1 and   ( FSUBTYPE='CRAFTSEAT' or FSUBTYPE='ADD' or FSUBTYPE='MODIFY') and  (fseatstate is null or fseatstate ='' or  fseatstate='0')
+    </select>
+
+
+    <update id="update" parameterType="DlMsg">
+    update t_cdm_dl_msg
+        <set>
+            <if test="sndr!=null">
+              fsender=#{sndr},
+            </if>
+            <if test="rcvr!=null">
+             freceiver=#{rcvr},
+            </if>
+            <if test="seqn!=null">
+             fseqn=#{seqn},
+            </if>
+            <if test="sendTime!=null">
+              fsendtime=#{sendTime},
+            </if>
+            <if test="type!=null">
+              ftype=#{type},
+            </if>
+            <if test="subType!=null">
+             fsubtype=#{subType},
+            </if>
+            <if test="state!=null">
+             fstate=#{state},
+            </if>
+            <if test="exception!=null">
+              fexception=#{exception},
+            </if>
+            <if test="seatState!=null">
+                fseatstate=#{seatState}
+            </if>
+      </set>
+      where fid=#{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.String">
+        delete t_cdm_dl_msg
+        where fid=#{id}
+    </delete>
+
+    <insert id="insert" parameterType="DlMsg">
+ insert into t_cdm_dl_msg(fid,  fversion,  fsender,  freceiver,  fseqn,  fsendtime,  ftype,  fsubtype,  fxmlcontent,  fstate, fexception,  fcreatetime,fseatstate)
+                    values(#{id,jdbcType=VARCHAR},#{version,jdbcType=NUMERIC},#{sndr,jdbcType=VARCHAR},#{rcvr,jdbcType=VARCHAR},
+                      #{seqn,jdbcType=VARCHAR},#{sendTime,jdbcType=TIMESTAMP},#{type,jdbcType=VARCHAR},#{subType,jdbcType=VARCHAR},
+                      #{xmlContent,jdbcType=VARCHAR},#{state,jdbcType=VARCHAR},#{exception,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP},#{seatState,jdbcType=VARCHAR})
+    </insert>
+</mapper>

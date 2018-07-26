@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szatc.ibatis.mapper.DepOrderMapper">
+	<resultMap id="BaseResultMap" type="com.szatc.ibatis.entity.DepOrder">
+		<result column="fid" property="id" />
+		<result column="fversion" jdbcType="DOUBLE" property="version"  javaType="java.lang.Integer"/>
+        <result column="fcdmType" property="cdmType" />
+        <result column="fxmlcontent" jdbcType="CLOB" property="xmlContent" javaType="string" />
+        <result column="fstate" property="state" />
+        <result column="fexception" property="exception" />
+        <result column="fcreatetime" jdbcType="TIMESTAMP" property="createTime" javaType="java.sql.Timestamp" />
+        <result column="fsender" property="sender" />
+        <result column="fcreator" property="creator" />
+	</resultMap>
+
+  <sql id="Base_Column_List" >
+   fid,fversion,fcdmType,fxmlContent,fstate,fexception, fcreatetime,fsender,fcreator
+  </sql>
+
+
+    <select id="getList" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from t_cdm_orderlog
+    </select>
+    <select id="getDepOrder" resultType="DepOrder" parameterType="java.sql.Timestamp">
+        select        <include refid="Base_Column_List" />
+          from (
+                select  <include refid="Base_Column_List" />     from t_cdm_orderlog
+                where fcdmtype='CDM008'
+                <if test="fcreatetime !=null"> and fcreateTime>#{creatTime}</if>
+                order by fcreatetime desc
+                )
+        where   rownum=1
+    </select>
+    <!--where fcdmtype='FlowControl'-->
+    <!--where fcdmtype='CDM008'-->
+    <!--where (fcdmtype='CDM008' or  fcdmtype='FlowControl')-->
+</mapper>

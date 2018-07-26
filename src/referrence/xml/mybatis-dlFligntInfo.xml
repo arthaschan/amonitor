@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szatc.ibatis.mapper.DlFlightInfoMapper">
+	<resultMap id="BaseResultMap" type="com.szatc.ibatis.entity.DlFlightInfo">
+		<result column="fid" property="id" />
+		<result column="FUUID" property="uuid" />
+		<result column="FINOUT" property="inOut" />
+		<result column="FFLIGHTNUMBER" property="flightNumber" />
+        <result column="FFLIGHTDATE" jdbcType="TIMESTAMP" property="flightDate" javaType="java.sql.Timestamp"/>
+        <result column="FAIRLINE" property="airline" />
+        <result column="FSEAT" property="seat" />
+        <result column="FPOK" jdbcType="TIMESTAMP" property="pok" javaType="java.sql.Timestamp" />
+        <result column="FBOR" jdbcType="TIMESTAMP" property="fbor" javaType="java.sql.Timestamp" />
+        <result column="FBLOCKDOWNTIME" jdbcType="TIMESTAMP" property="blockDownTime" javaType="java.sql.Timestamp" />
+        <result column="FBLOCKUPTIME" jdbcType="TIMESTAMP" property="blockUpTime" javaType="java.sql.Timestamp" />
+	</resultMap>
+
+
+  <sql id="Base_Column_List" >
+   FID,FUUID,FINOUT,FFLIGHTNUMBER,FFLIGHTDATE,FAIRLINE,FPOK,FBOR,FBLOCKDOWNTIME,FBLOCKUPTIME,FSEAT
+  </sql>
+
+    <select id="getList" resultMap="BaseResultMap"  parameterType="java.sql.Timestamp">
+        select
+        <include refid="Base_Column_List" />
+        from  t_cdm_dl_flight
+        where fflightDate>=#{flightDate}
+    </select>
+
+    <update id="update">
+        update  t_cdm_dl_flight
+            <set>
+                <if test="uuid!=null">
+                    fuuid=#{uuid},
+                </if>
+                <if test="inOut!=null">
+                    finOut=#{inOut},
+                </if>
+                <if test="flightNumber!=null">
+                    FFLIGHTNUMBER=#{flightNumber},
+                </if>
+                <if test="flightDate!=null">
+                    FFLIGHTDATE=#{flightDate},
+                </if>
+                <if test="airline!=null">
+                    FAIRLINE=#{airline},
+                </if>
+
+                <if test="fbor!=null">
+                  fbor=#{fbor},
+                </if>
+                <if test="pok!=null">
+                 fpok=#{pok},
+                </if>
+                <if test="blockUpTime!=null">
+                 fblockUpTime=#{blockUpTime},
+                </if>
+                <if test="blockDownTime!=null">
+                  fblockDownTime=#{blockDownTime},
+                </if>
+                <if test="seat!=null">
+                  fseat=#{seat}
+                </if>
+            </set>
+        where fid=#{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.String">
+        delete t_cdm_dl_flight
+        where fid=#{id}
+    </delete>
+
+    <insert id="insert" parameterType="DlFlightInfo">
+insert into t_cdm_dl_flight(fid,  FUUID,  FINOUT,  FFLIGHTNUMBER,  FFLIGHTDATE,  FAIRLINE,  FPOK,  FBOR,  FBLOCKDOWNTIME,  FBLOCKUPTIME,  FSEAT )
+values(#{id},#{uuid,jdbcType=VARCHAR},#{inOut,jdbcType=VARCHAR},#{flightNumber,jdbcType=VARCHAR},#{flightDate,jdbcType=TIMESTAMP},#{airline,jdbcType=VARCHAR}
+,#{pok,jdbcType=TIMESTAMP},#{fbor,jdbcType=TIMESTAMP},#{blockDownTime,jdbcType=TIMESTAMP},#{blockUpTime,jdbcType=TIMESTAMP},#{seat,jdbcType=VARCHAR}  )
+ </insert>
+ <!--jdbcType=varchar，可以对付 插入值为空的情况。比写动态SQL 更方便。-->
+
+    <select id="isExist" resultType="java.lang.String" parameterType="java.lang.String">
+      select fid from  t_cdm_dl_flight where fid=#{id}
+    </select>
+</mapper>

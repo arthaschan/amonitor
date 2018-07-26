@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szatc.ibatis.mapper.FlightInfoMapper">
+	<resultMap id="BaseResultMap" type="com.szatc.ibatis.entity.FlightInfo">
+		<result column="fid" property="fuid" />
+		<result column="fflightNumber" property="flightNo" />
+
+        <result column="fflightid" property="flightId" />
+        <result column="fparkinapron" property="position" />
+        <result column="foffBlockTime" jdbcType="TIMESTAMP" property="aobt" javaType="java.sql.Timestamp"/>
+        <result column="fonBlockTime" jdbcType="TIMESTAMP" property="aibt" javaType="java.sql.Timestamp" />
+        <result column="floadedTime" jdbcType="TIMESTAMP" property="loadTime" javaType="java.sql.Timestamp"/>
+        <result column="floadTime" jdbcType="TIMESTAMP" property="loadStartTime" javaType="java.sql.Timestamp" />
+        <result column="sobt" jdbcType="TIMESTAMP" property="sobt" javaType="java.sql.Timestamp" />
+        <result column="etd" jdbcType="TIMESTAMP" property="etd" javaType="java.sql.Timestamp" />
+        <result column="ades" property="ades" />
+        <result column="adep" property="adep" />
+
+
+	</resultMap>
+
+  <!--from 里必须有  t_cdm_flightInfo t-->
+  <sql id="Base_Column_List" >
+  t.fid,fflightNumber,  fparkinapron,  foffBlockTime,fonBlockTime,floadedTime,floadTime
+,T.FSCHEDULEDTIMEDEPARTURE as sobt ,  t.fflightid,t.fetd as etd,
+(select A.FICAO from  t_cdm_airportcodetype a where  a.fid=T.FPOA) as ades ,(select b.FICAO from  t_cdm_airportcodetype b where  b.fid=T.FPOD) as adep
+  </sql>
+
+    <select id="getList" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from t_cdm_flightInfo t
+    </select>
+
+    <update id="update" parameterType="DlFlightInfo">
+--         大连传过来的是北京时间，数据库里存的是UTC
+        update t_cdm_flightinfo
+        <set>
+            <if test="flightNumber!=null">
+                fflightnumber=#{flightNumber},
+            </if>
+            <if test="fbor!=null">
+                floadTime=#{fbor}-8/24,
+            </if>
+            <if test="pok!=null">
+                floadedTime=#{pok}-8/24,
+            </if>
+            <if test="blockUpTime!=null">
+                fonBlockTime=#{blockUpTime}-8/24,
+            </if>
+            <if test="blockDownTime!=null">
+                foffBlockTime=#{blockDownTime}-8/24,
+            </if>
+            <if test="seat!=null">
+                fparkinapron=#{seat},
+            </if>
+      </set>
+      where fid=#{uuid}
+    </update>
+
+    <select id="searchUuid" resultType="java.lang.String" >
+        select      fid         from t_cdm_flightInfo t        where
+         T.FFLIGHTNUMBER=#{flightNumber} AND FENTRANCETYPE=#{inOut}
+    AND  to_char(#{flightDate},'yyyy-MM-dd HH24:mi:ss')=to_char(T.FFLIGHTORIGINDATE,'yyyy-MM-dd HH24:mi:ss')
+    </select>
+</mapper>
